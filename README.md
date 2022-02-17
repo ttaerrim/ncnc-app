@@ -54,7 +54,7 @@ width="100px;"
 alt=""
 /></td>
 <td><a href="https://github.com/ttaerrim" >이태림</a></td>
-<td>상품 상세 페이지, 마이페이지, 고객센터 </td>
+<td>상품 상세 페이지, 마이페이지, 고객센터, e2e 테스트 </td>
 </tr>
 
 <tr>
