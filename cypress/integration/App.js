@@ -4,11 +4,9 @@ describe('ncnc-app 방문', () => {
     });
 
     it('displays two todo items by default', () => {
-        cy.get(
-            '[style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%"] > [alt="menu"]',
-        ).click();
-        cy.get('.css-zobes2').contains('고객센터').click();
-        cy.get('.css-1ifz5kw').contains('고객센터');
+        cy.get('button').click();
+        cy.get('.css-1or0kde-EnterDiv').contains('고객센터').click();
+        cy.get('.css-4y9rut-Text').contains('고객센터');
         cy.get(':nth-child(1) > .css-1eugq34').click();
         cy.get('.css-1245hb1')
             .contains(

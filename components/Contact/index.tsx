@@ -5,20 +5,16 @@ import { QaType, QnaType } from 'types/qaTypes';
 import QnaList from './QnaList';
 
 import * as Styled from './styled';
+import { ContactType } from 'types/contactTypes';
 
-const Contact = () => {
-    const [qaTypes, setQaTypes] = useState<QaType[]>();
+const Contact = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
     const [qaId, setQaId] = useState<number>(1);
-    const data = useAxios<QnaType>('/qa-types');
 
     const qaIdHandler = (event: React.MouseEvent<HTMLButtonElement>) => {
         const id = Number(event.currentTarget.id);
         setQaId(id);
     };
-    useEffect(() => {
-        setQaTypes(data?.qaTypes);
-    }, [data]);
-    if (!qaTypes) return <div>로딩중</div>;
+
     return (
         <Styled.ContactDiv>
             <Styled.DescSection>
@@ -45,7 +41,11 @@ const Contact = () => {
                 </Styled.ButtonDiv>
             </Styled.FrequentQaSection>
             <Styled.BackgroundDiv></Styled.BackgroundDiv>
-            <QnaList qaId={qaId} />
+            <QnaList
+                qaId={qaId}
+                qaBuyList={qaBuyList}
+                qaSellList={qaSellList}
+            />
         </Styled.ContactDiv>
     );
 };

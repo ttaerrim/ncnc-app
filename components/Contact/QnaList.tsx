@@ -2,18 +2,20 @@ import { useState } from 'react';
 
 import useAxios from 'hooks/useAxios';
 import Qna from './Qna';
-import { Qas } from 'types/qaTypes';
+import { Qa } from 'types/qaTypes';
 
-const QnaList = ({ qaId }: { qaId: number }) => {
-    const qaBuyList = useAxios<Qas>(`qas?qaTypeId=1`);
-    const qaSellList = useAxios<Qas>(`qas?qaTypeId=2`);
+interface QnaListType {
+    qaId: number;
+    qaBuyList: Qa[];
+    qaSellList: Qa[];
+}
+const QnaList = ({ qaId, qaBuyList, qaSellList }: QnaListType) => {
     const [currentQa, setCurrentQa] = useState<number>(0);
-    if (!qaBuyList || !qaSellList) return <div>로딩중</div>;
     return (
         <section>
             <div>
                 {qaId === 1
-                    ? qaBuyList.qas.map((qa) => (
+                    ? qaBuyList.map((qa) => (
                           <Qna
                               key={qa.id}
                               qa={qa}
@@ -21,7 +23,7 @@ const QnaList = ({ qaId }: { qaId: number }) => {
                               setCurrentQa={setCurrentQa}
                           />
                       ))
-                    : qaSellList.qas.map((qa) => (
+                    : qaSellList.map((qa) => (
                           <Qna
                               key={qa.id}
                               qa={qa}

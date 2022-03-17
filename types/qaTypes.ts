@@ -8,10 +8,6 @@ export interface QaType {
     name: string;
 }
 
-export interface Qas {
-    qas: Qa[];
-}
-
 export interface Qa {
     id: number;
     question: string;
