@@ -58,7 +58,6 @@ const Carousel = () => {
             }
         }
     };
-    console.log(current);
     return (
         <Styled.Wrapper>
             <Styled.Container

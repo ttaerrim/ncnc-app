@@ -35,7 +35,6 @@ const OptionButton = ({
     const closeHandler = () => {
         dispatch(optionActions.changeOpenState(false));
         setSelectedOption('');
-        console.log('close');
     };
     return (
         <Styled.OptionContainer>

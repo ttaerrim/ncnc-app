@@ -10,7 +10,6 @@ const BrandId = () => {
     const router = useRouter();
     const id = Number(router.query.brandId);
 
-    console.log(id);
     const [category, setCategory] = useState<ConItems[]>([]);
 
     useEffect(() => {

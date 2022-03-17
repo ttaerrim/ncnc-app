@@ -15,7 +15,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     const router = useRouter();
     const [headerTitle, setHeaderTitle] = useState('');
     const title = router.asPath;
-    console.log(router);
 
     const splitRouter = title.split('/');
     const category = splitRouter[1];
@@ -23,7 +22,6 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 
     let name: string = '';
 
-    console.log(title);
     useEffect(() => {
         if (id) {
             const getCategories = async () => {

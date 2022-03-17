@@ -1,6 +1,5 @@
 import axios from 'axios';
 import Contact from 'components/Contact';
-import useAxios from 'hooks/useAxios';
 import React from 'react';
 import { ContactType } from 'types/contactTypes';
 
