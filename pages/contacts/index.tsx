@@ -4,6 +4,7 @@ import React from 'react';
 import { ContactType } from 'types/contactTypes';
 
 const Contacts = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
+    console.log(qaTypes);
     return (
         <Contact
             qaTypes={qaTypes}

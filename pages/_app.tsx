@@ -26,11 +26,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         if (id) {
             const getCategories = async () => {
                 if (category === 'categories') {
-                    const fetchUrl = `con-category1s/${id}/nested`;
+                    const fetchUrl = `/con-category1s/${id}/nested`;
                     const { conCategory1 } = await fetcher(fetchUrl);
                     name = conCategory1.name;
                 } else if (category === 'brands') {
-                    const fetchUrl = `con-category2s/${id}`;
+                    const fetchUrl = `/con-category2s/${id}`;
                     const { conCategory2 } = await fetcher(fetchUrl);
                     name = conCategory2.name;
                 } else {
