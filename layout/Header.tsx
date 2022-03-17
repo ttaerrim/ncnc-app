@@ -29,7 +29,7 @@ const Wrapper = styled.nav`
     }
 `;
 
-const IconWrap = styled.button`
+const IconWrap = styled.div`
     width: 50px;
     height: 50px;
     padding: 10px;
@@ -76,7 +76,5 @@ const Header = ({ name }: { name: string }): JSX.Element => {
         </Wrapper>
     );
 };
-
-const HeaderBox = styled.header``;
 
 export default Header;
