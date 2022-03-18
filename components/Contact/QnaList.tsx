@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import Qna from './Qna';
-import { Qa } from 'types';
+import { Qa } from 'types/index';
 
 interface QnaListType {
     qaId: number;

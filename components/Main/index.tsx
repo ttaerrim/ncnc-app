@@ -3,7 +3,7 @@ import useAxios from 'hooks/useAxios';
 import Link from 'next/link';
 
 import Section from 'layout/Section';
-import { CategoryListType } from 'types';
+import { CategoryListType } from 'types/index';
 
 import * as Styled from './stlyed';
 

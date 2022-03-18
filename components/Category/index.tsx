@@ -6,7 +6,7 @@ import { selectBrandActions } from 'store';
 import Deal from 'components/Deal/Deal';
 import CategoryNav from './CategoryNav';
 import Section from 'layout/Section';
-import { conCategory2s } from 'types';
+import { conCategory2s } from 'types/index';
 import { ItemsHolder } from 'components/Brand/styled';
 import { CategoryProps } from './types';
 

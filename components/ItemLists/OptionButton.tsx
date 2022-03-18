@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { optionActions, RootState } from 'store';
 import OptionList from './OptionList';
-import { Option } from 'types';
+import { Option } from 'types/index';
 
 import pencil from 'public/pencil.svg';
 import closeButton from 'public/closeButton.svg';

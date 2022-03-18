@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { conCategory2s, ConItems } from 'types';
+import { conCategory2s, ConItems } from 'types/index';
 
 import BrandItems from 'components/Brand/BrandItems';
 import { fetcher } from 'utils/fetcher';

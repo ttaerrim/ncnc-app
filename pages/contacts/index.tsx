@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Contact from 'components/Contact';
 import React from 'react';
-import { ContactType } from 'types';
+import { ContactType } from 'types/index';
 
 const Contacts = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
     return (

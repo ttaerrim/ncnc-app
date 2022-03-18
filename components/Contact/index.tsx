@@ -3,7 +3,7 @@ import { useState } from 'react';
 import QnaList from './QnaList';
 
 import * as Styled from './styled';
-import { ContactType } from 'types';
+import { ContactType } from 'types/index';
 
 const Contact = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
     const [qaId, setQaId] = useState<number>(1);

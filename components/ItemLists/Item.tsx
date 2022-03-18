@@ -4,7 +4,7 @@ import useAxios from 'hooks/useAxios';
 import ItemInfo from './ItemInfo';
 import ItemDesc from './ItemDesc';
 import OptionButton from './OptionButton';
-import { ConItem, ItemType, Option } from 'types';
+import { ConItem, ItemType, Option } from 'types/index';
 import styled from '@emotion/styled';
 
 const Item = ({ conItemId }: { conItemId: number }): JSX.Element => {

@@ -1,4 +1,4 @@
-import { ConItems } from 'types';
+import { ConItems } from 'types/index';
 
 export interface BrandItemsProp {
     conItems: ConItems[];

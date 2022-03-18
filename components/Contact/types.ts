@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import { Qa } from 'types';
+import { Qa } from 'types/index';
 
 export interface QnaProps {
     qa: Qa;

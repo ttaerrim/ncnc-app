@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 
-import { Qa } from 'types';
+import { Qa } from 'types/index';
 import Image from 'next/image';
 import qaCloseArrow from 'public/qaCloseArrow.svg';
 import qaOpenArrow from 'public/qaOpenArrow.svg';

@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { optionActions, RootState } from 'store';
-import { ConItem } from 'types';
+import { ConItem } from 'types/index';
 
 import * as Styled from './styled/item-desc';
 
