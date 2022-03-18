@@ -1,57 +1,51 @@
-import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useRouter } from 'next/router';
-
 import Category from 'components/Category';
 import { conCategory1 } from 'types/categoryTypes';
 import { conCategory1s } from 'types/categoryListTypes';
 import { DealItemProps } from 'components/Deal/types';
-import { getCategoryIdActions } from 'store';
 import { fetcher } from 'utils/fetcher';
+import { GetServerSideProps } from 'next';
 
-const CategoriesPage = () => {
-    const dispatch = useDispatch();
-    const [categories, setCategories] = useState<conCategory1 | null>(null);
-    const [categoryList, setCategoryList] = useState<conCategory1s[]>([]);
-    const [conItemList, setConItemList] = useState<DealItemProps[]>([]);
-    const router = useRouter();
-    const { id } = router.query;
-
-    useEffect(() => {
-        if (id) {
-            const getCategories = async () => {
-                const fetchUrl = `/con-category1s/${id}/nested`;
-                const { conCategory1 } = await fetcher(fetchUrl);
-                setCategories(conCategory1);
-            };
-            getCategories();
-            const getCategoryList = async () => {
-                const fetchUrl = `/con-category1s`;
-                const { conCategory1s } = await fetcher(fetchUrl);
-                setCategoryList(conCategory1s);
-            };
-            getCategoryList();
-            const getConItems = async () => {
-                const fetchUrl = '/con-items/soon';
-                const { conItems } = await fetcher(fetchUrl);
-                setConItemList(conItems);
-            };
-            getConItems();
-
-            dispatch(getCategoryIdActions.category(Number(id)));
-            return;
-        }
-    }, [id]);
+const CategoriesPage = ({
+    id,
+    categories,
+    categoryList,
+    conItems,
+}: {
+    id: string;
+    categories: conCategory1;
+    categoryList: conCategory1s[];
+    conItems: DealItemProps[];
+}) => {
     return (
-        categories && (
-            <Category
-                categories={categories}
-                categoryList={categoryList}
-                id={Number(id)}
-                conItems={conItemList}
-            />
-        )
+        <Category
+            categories={categories}
+            categoryList={categoryList}
+            id={Number(id)}
+            conItems={conItems}
+        />
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const { id } = context.query;
+
+    const getCategories = async () => {
+        const { conCategory1 } = await fetcher(`/con-category1s/${id}/nested`);
+        return conCategory1;
+    };
+    const getCategoryList = async () => {
+        const { conCategory1s } = await fetcher(`/con-category1s`);
+        return conCategory1s;
+    };
+    const getConItems = async () => {
+        const { conItems } = await fetcher('/con-items/soon');
+        return conItems;
+    };
+    const categories = await getCategories();
+    const categoryList = await getCategoryList();
+    const conItems = await getConItems();
+
+    return { props: { id, categories, categoryList, conItems } };
 };
 
 export default CategoriesPage;

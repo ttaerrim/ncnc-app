@@ -21,7 +21,6 @@ const Category = ({
     const dispatch = useDispatch();
     const getBrandHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
         const brandId = Number(event.currentTarget.id);
-
         dispatch(selectBrandActions.brand(brandId));
     };
 
