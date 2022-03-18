@@ -46,8 +46,9 @@ const MainWrapper = styled.div`
 `;
 
 export async function getStaticProps() {
-    const fetchUrl = `https://api2.ncnc.app/con-items/soon`;
-    const { data } = await axios.get<{ conItems: DealItemProps[] }>(fetchUrl);
+    const { data } = await axios.get<{ conItems: DealItemProps[] }>(
+        '/con-items/soon',
+    );
     const conItems = data.conItems;
 
     const { data: category } = await axios.get<CategoryListType>(
