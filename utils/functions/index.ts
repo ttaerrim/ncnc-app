@@ -15,6 +15,8 @@ export const getExpiryDate = (input_date: string): string => {
     }`;
 };
 
-export const get3DigitsCost = (cost: number): string => {
-    return cost.toLocaleString();
+export const get3DigitsCost = (cost: number | string): string => {
+    return typeof cost === 'string'
+        ? Number(cost).toLocaleString()
+        : cost.toLocaleString();
 };
