@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { conCategory2s } from 'types/categoryTypes';
+import { conCategory2s, ConItems } from 'types';
 
 import BrandItems from 'components/Brand/BrandItems';
 import { fetcher } from 'utils/fetcher';
-import { ConItems } from 'types/items';
 import { GetServerSideProps } from 'next';
 
 const BrandId = ({ conItems }: { conItems: ConItems[] }) => {

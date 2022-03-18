@@ -1,4 +1,4 @@
-import { ConItem } from 'types/itemTypes';
+import { ConItem } from 'types';
 import { get3DigitsCost } from 'utils/functions';
 import * as Styled from './styled/item-info';
 

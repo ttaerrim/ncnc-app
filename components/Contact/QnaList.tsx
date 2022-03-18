@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
-import useAxios from 'hooks/useAxios';
 import Qna from './Qna';
-import { Qa } from 'types/qaTypes';
+import { Qa } from 'types';
 
 interface QnaListType {
     qaId: number;

@@ -1,5 +1,5 @@
 import { Dispatch, Fragment, SetStateAction } from 'react';
-import { Option } from 'types/itemTypes';
+import { Option } from 'types';
 import OptionItem from './OptionItem';
 
 const OptionList = ({

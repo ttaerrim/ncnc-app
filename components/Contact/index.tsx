@@ -1,11 +1,9 @@
-import { useEffect, useState } from 'react';
-import useAxios from 'hooks/useAxios';
+import { useState } from 'react';
 
-import { QaType, QnaType } from 'types/qaTypes';
 import QnaList from './QnaList';
 
 import * as Styled from './styled';
-import { ContactType } from 'types/contactTypes';
+import { ContactType } from 'types';
 
 const Contact = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
     const [qaId, setQaId] = useState<number>(1);

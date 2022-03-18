@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 
 import Link from 'next/link';
-import { conCategory1s } from 'types/categoryListTypes';
+import { conCategory1s } from 'types';
 
 import * as Styled from './styled';
 

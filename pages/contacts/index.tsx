@@ -1,10 +1,9 @@
 import axios from 'axios';
 import Contact from 'components/Contact';
 import React from 'react';
-import { ContactType } from 'types/contactTypes';
+import { ContactType } from 'types';
 
 const Contacts = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
-    console.log(qaTypes);
     return (
         <Contact
             qaTypes={qaTypes}

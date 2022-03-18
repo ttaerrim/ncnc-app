@@ -1,6 +1,5 @@
 import Category from 'components/Category';
-import { conCategory1 } from 'types/categoryTypes';
-import { conCategory1s } from 'types/categoryListTypes';
+import { conCategory1s, conCategory1 } from 'types';
 import { DealItemProps } from 'components/Deal/types';
 import { fetcher } from 'utils/fetcher';
 import { GetServerSideProps } from 'next';

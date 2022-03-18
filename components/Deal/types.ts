@@ -1,4 +1,4 @@
-import { ConCategory2 } from 'types/itemTypes';
+import { ConCategory2 } from 'types';
 
 export interface DealItemProps {
     id: number;
