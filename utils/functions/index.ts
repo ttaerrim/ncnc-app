@@ -52,3 +52,10 @@ const getMonth = (month: string): string => {
             return '00';
     }
 };
+
+export const getRouterId = (url: string) => {
+    if (url.includes('?')) {
+        const urlArray = url.substr(0, url.indexOf('?')).split('/');
+        return urlArray[2];
+    } else return false;
+};
