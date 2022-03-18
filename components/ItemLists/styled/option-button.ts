@@ -31,18 +31,16 @@ export const OptionSection = styled.section<{ isOpen: boolean }>`
     width: 100%;
     max-width: 672px;
     border-top: 1px solid rgb(204, 204, 204);
+    transform: translateY(100%);
+    transition: 0.2s;
     ${({ isOpen }) => {
-        if (!isOpen) {
+        if (isOpen) {
             return css`
-                animation-name: ${slideDown};
-                display: none;
+                transform: translateY(0px);
             `;
         }
     }}
-    animation-duration: 150ms;
-    animation-timing-function: ease-out;
-    animation-name: ${slideUp};
-    animation-fill-mode: forwards;
+    z-index: 50;
 `;
 
 export const ButtonSection = styled.section<{ isOpen: boolean }>`
@@ -61,6 +59,7 @@ export const ButtonSection = styled.section<{ isOpen: boolean }>`
         }
     }}
     background-color: white;
+    z-index: 10;
 `;
 
 export const OptionTitle = styled.div`
@@ -113,20 +112,13 @@ export const OptionBtn = styled.button<{ disabled: boolean }>`
             `;
         }
     }}
+    z-index: 100;
 `;
 
-export const OptionDiv = styled.div<{ isOpen: boolean }>`
+export const OptionDiv = styled.div`
     background-color: white;
     width: 100%;
     max-width: 672px;
     height: 256px;
-
     overflow: scroll;
-    ${({ isOpen }) => {
-        if (!isOpen) {
-            return css`
-                display: none;
-            `;
-        }
-    }}
 `;

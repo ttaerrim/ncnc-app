@@ -47,7 +47,7 @@ const OptionButton = ({
                         </button>
                     </Styled.ImageDiv>
                 </Styled.OptionTitle>
-                <Styled.OptionDiv isOpen={optionState.isOpen}>
+                <Styled.OptionDiv>
                     <OptionList
                         options={options}
                         originalPrice={originalPrice}
