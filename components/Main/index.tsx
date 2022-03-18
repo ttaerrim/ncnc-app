@@ -7,36 +7,33 @@ import { CategoryListType } from 'types/index';
 
 import * as Styled from './stlyed';
 
-const Category = (): JSX.Element => {
-    const conCategory1s =
-        useAxios<CategoryListType>('/con-category1s')?.conCategory1s;
-
+const Category = ({
+    conCategory1s,
+}: {
+    conCategory1s: conCategory1s[];
+}): JSX.Element => {
     return (
         <Fragment>
             <Styled.MainWrapper>
-                {!conCategory1s ? (
-                    <h3></h3>
-                ) : (
-                    conCategory1s.map((category) => (
-                        <Section key={category.id}>
-                            <Styled.SectionDiv>
-                                <Link href={`/categories/${category.id}`}>
-                                    <Styled.SectionA>
-                                        <Styled.GrowDiv>
-                                            <Styled.BrandImg
-                                                src={category.imageUrl}
-                                                alt="logo"
-                                            />
-                                            <Styled.BrandName>
-                                                {category.name}
-                                            </Styled.BrandName>
-                                        </Styled.GrowDiv>
-                                    </Styled.SectionA>
-                                </Link>
-                            </Styled.SectionDiv>
-                        </Section>
-                    ))
-                )}
+                {conCategory1s.map((category) => (
+                    <Section key={category.id}>
+                        <Styled.SectionDiv>
+                            <Link href={`/categories/${category.id}`}>
+                                <Styled.SectionA>
+                                    <Styled.GrowDiv>
+                                        <Styled.BrandImg
+                                            src={category.imageUrl}
+                                            alt="logo"
+                                        />
+                                        <Styled.BrandName>
+                                            {category.name}
+                                        </Styled.BrandName>
+                                    </Styled.GrowDiv>
+                                </Styled.SectionA>
+                            </Link>
+                        </Styled.SectionDiv>
+                    </Section>
+                ))}
                 <Styled.TitleDiv>
                     <div>
                         <Styled.WarnDiv>놓치지 마세요</Styled.WarnDiv>

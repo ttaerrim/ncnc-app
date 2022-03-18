@@ -11,12 +11,14 @@ import useAxios from 'hooks/useAxios';
 
 import Mypage from 'components/Mypage';
 import styled from '@emotion/styled';
+import { CategoryListType, conCategory1s } from 'types';
 
 interface HomeProps {
     conItems: DealItemProps[];
+    mainCategory: conCategory1s[];
 }
 
-const Home: NextPage<HomeProps> = ({ conItems }) => {
+const Home: NextPage<HomeProps> = ({ conItems, mainCategory }) => {
     useAxios('/con-items/soon');
 
     return (
@@ -32,7 +34,7 @@ const Home: NextPage<HomeProps> = ({ conItems }) => {
                 </Head>
                 <Mypage />
                 <Carousel />
-                <Main />
+                <Main conCategory1s={mainCategory} />
                 <Deal onDealItems={conItems} />
             </MainWrapper>
         </Fragment>
@@ -47,8 +49,14 @@ export async function getStaticProps() {
     const fetchUrl = `https://api2.ncnc.app/con-items/soon`;
     const { data } = await axios.get<{ conItems: DealItemProps[] }>(fetchUrl);
     const conItems = data.conItems;
+
+    const { data: category } = await axios.get<CategoryListType>(
+        '/con-category1s',
+    );
+    const mainCategory = category.conCategory1s;
+
     return {
-        props: { conItems },
+        props: { conItems, mainCategory },
     };
 }
 export default Home;
