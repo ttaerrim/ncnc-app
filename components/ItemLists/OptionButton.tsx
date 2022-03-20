@@ -29,6 +29,7 @@ const OptionButton = ({
     const orderHandler = () => {
         if (!optionState.isOpen) {
             alert('구매가 성공적으로 완료되었습니다!');
+            location.reload();
         }
     };
 
