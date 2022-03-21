@@ -32,6 +32,7 @@ const Contact = ({ qaTypes, qaBuyList, qaSellList }: ContactType) => {
                             onClick={qaIdHandler}
                             id={type.id.toString()}
                             isClick={type.id === qaId}
+                            data-cy={`contact-tap-${type.id}`}
                         >
                             {type.name}
                         </Styled.FrequentButton>

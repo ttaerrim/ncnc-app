@@ -54,21 +54,24 @@ const Header = ({ name }: { name: string }): JSX.Element => {
             {name && router.asPath !== '/' && (
                 <>
                     <IconWrap>
-                        <button onClick={() => router.back()}>
+                        <button
+                            data-cy="back-menu"
+                            onClick={() => router.back()}
+                        >
                             <Image src={back} alt="menu" />
                         </button>
                     </IconWrap>
-                    <Text>
+                    <Text data-cy="header-title">
                         <p>{name}</p>
                     </Text>
                 </>
             )}
             {router.asPath === '/' && (
                 <>
-                    <IconWrap onClick={openHandler}>
+                    <IconWrap onClick={openHandler} data-cy="hamburger-menu">
                         <Image src={iconMenu} alt="menu" />
                     </IconWrap>
-                    <Text>
+                    <Text data-cy="header-title">
                         <p>니콘내콘</p>
                     </Text>
                 </>

@@ -4,19 +4,6 @@ describe('ncnc-app 방문', () => {
     });
 
     it('displays two todo items by default', () => {
-        cy.get('button').click();
-        cy.get('.css-1or0kde-EnterDiv').contains('고객센터').click();
-        cy.get('.css-4y9rut-Text').contains('고객센터');
-        cy.get(':nth-child(1) > .css-1eugq34').click();
-        cy.get('.css-1245hb1')
-            .contains(
-                '니콘머니, 모바일 쿠폰은 현금성 유가증권에 해당되므로, 현금영수증이 별도로 발행되지 않습니다. 매장에서 구매하신 쿠폰으로 결제시 직원에게 요청하시면 발급이 가능합니다. 단, 일부 이벤트 쿠폰의 경우 현금 영수증 발행이 불가할 수 있으며 해당 사유로는 환불이 불가한 점 양해 부탁드립니다.',
-            )
-            .should('be.visible');
-        cy.get('button[id="2"]').click();
-        cy.get(':nth-child(1) > .css-1eugq34 > .css-1t8eddt').contains(
-            '바로 정산은 안 되나요?',
-        );
         cy.get('.css-18tfhk1').click();
         cy.get(':nth-child(1) > .css-1v0qy5v').click();
         cy.get(
