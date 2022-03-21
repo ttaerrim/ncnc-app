@@ -34,7 +34,10 @@ const Qna = ({ qa, currentQa, setCurrentQa }: QnaProps) => {
                     )}
                 </span>
             </Styled.QuestionButton>
-            <Styled.AnswerContainer active={qa.id === currentQa}>
+            <Styled.AnswerContainer
+                active={qa.id === currentQa}
+                data-cy="qna-answer"
+            >
                 <Styled.AnswerDiv>
                     <p>{qa.answer}</p>
                 </Styled.AnswerDiv>

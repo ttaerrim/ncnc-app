@@ -30,7 +30,7 @@ const Mypage = () => {
                     <Styled.EmptyDiv />
                     <Link href={'/contacts'}>
                         <a onClick={closeHandler}>
-                            <Styled.EnterDiv>
+                            <Styled.EnterDiv data-cy="contacts">
                                 <Styled.TextSpan>고객센터</Styled.TextSpan>
                                 <Image src={enter} />
                             </Styled.EnterDiv>

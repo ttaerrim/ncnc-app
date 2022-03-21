@@ -12,7 +12,7 @@ const QnaList = ({ qaId, qaBuyList, qaSellList }: QnaListType) => {
     const [currentQa, setCurrentQa] = useState<number>(0);
     return (
         <section>
-            <div>
+            <div data-cy="qna-list">
                 {qaId === 1
                     ? qaBuyList.map((qa) => (
                           <Qna
