@@ -1,6 +1,6 @@
 <h1 align="center"> 니콘내콘 과제 </h1>
 
-<h3 align="center"> 서비스 링크: https://ncnc-app-iota.vercel.app/ </h3>
+<h3 align="center"> 서비스 링크: https://ncnc-app-ttaerrim.vercel.app/ </h3>
 
 <p align="center"><img width="500" src="https://bit.ly/3HUSY9s" /></p>
 
