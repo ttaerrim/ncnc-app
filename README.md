@@ -134,3 +134,18 @@ $ npm run dev || yarn dev
 2. 마이페이지와 고객 센터
 
 <img width="400" src="https://user-images.githubusercontent.com/28384562/154145176-07ec7cde-020b-4139-9335-65d47a4664e8.gif" />
+
+
+## 담당 기능
+
+- 상품을 클릭했을 때 보이는 **상품 상세 페이지**
+- **마이페이지**
+- **고객센터**
+- `cypress`를 사용한 **E2E 테스트**
+
+## 배운 점
+
+- SEO 향상을 위해 `Next.js` 를 사용하여 SSR 환경을 구축할 수 있다.
+- `Date` 함수를 사용하여 날짜 형식을 지정할 수 있다.
+- Next.js의 `getServerSideProps`, `getStaticProps`를 사용하여 SSR을 구현할 수 있다.
+- `cypress`를 사용한 간단한 `E2E 테스트`를 구현할 수 있다.
